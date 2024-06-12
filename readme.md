@@ -26,10 +26,12 @@ cd path/to/project/server
 npm run dev
 ```
 
-### Open on localhost:3333/registration
+### Open on http://localhost:3333/registration
 
-### to run separately
-### follow the install steps
+### ------------------------------------------
+
+### If you want to run separately
+### Follow the install steps then
 
 ### run server
 ```
