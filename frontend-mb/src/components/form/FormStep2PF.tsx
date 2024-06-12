@@ -43,7 +43,6 @@ export default function FormStep2PF({ handleSave }: FormStepProps) {
 
 
   async function handleOnSubmitStep2(data: any) {
-    console.log("data", data)
     const step2Data = {
       ...data
     }

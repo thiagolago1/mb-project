@@ -22,7 +22,6 @@ export default function FormStep1({ handleSave }: FormStepProps) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<InputsStep1>({
     resolver: zodResolver(formSchema)
