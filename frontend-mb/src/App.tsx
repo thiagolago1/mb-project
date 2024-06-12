@@ -7,6 +7,7 @@ import FormStep2PJ from "./components/form/FormStep2PJ";
 import FormStep3 from "./components/form/FormStep3";
 import FormStep4 from "./components/form/FormStep4";
 import React from 'react';
+import { api } from './api/api';
 
 interface step1DataProps {
   email: string;
@@ -89,6 +90,40 @@ export default function App() {
 
   async function handleFinishRegister() {
     console.log("allData", allData)
+
+    const body = allData;
+
+    let header = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Accept-Language': 'pt-BR',
+      }
+    }
+
+    let UrlApi = 'registration';
+
+    await api(UrlApi, {
+      method: 'POST',
+      body: JSON.stringify({}),
+      headers: {
+        ...header.headers
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.statusCode === 200) {
+        console.log(data);
+        alert('Você foi cadastrado com sucesso!');
+      } else {
+        console.log(data);
+        console.error('Erro ao efetuar cadastro! Verifique se está faltando alguma informação ou existe alguma informação mal preenchida: ', data.errors);
+        alert('Erro ao efetuar cadastro! Verifique se está faltando alguma informação ou existe alguma informação mal preenchida.')
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao executar api: ', error);
+    })
   }
 
   return (
