@@ -121,6 +121,7 @@ export default function App() {
       }
     })
     .catch(error => {
+      alert("Erro ao executar api");
       console.error('Erro ao executar api: ', error);
     })
   }

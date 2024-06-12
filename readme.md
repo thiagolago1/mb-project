@@ -14,12 +14,11 @@ cd path/to/project/frontend-mb
 npm install
 ```
 
-### buid frontend
+### build frontend
 ```
 cd path/to/project/frontend-mb
 npm run build
 ```
-
 
 ### run server
 ```
@@ -28,4 +27,25 @@ npm run dev
 ```
 
 ### Open on localhost:3333/registration
+
+### to run separately
+### follow the install steps
+
+### run server
+```
+cd path/to/project/server
+npm run dev
+```
+
+### run frontend
+```
+cd path/to/project/frontend-mb
+npm run dev
+```
+
+### Open on http://localhost:5173
+
+
+
+
 

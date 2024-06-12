@@ -20,16 +20,15 @@ export default function FormStep2PF({ handleSave }: FormStepProps) {
     name: z.string({required_error: "Campo obrigatório", message: 'Campo obrigatório'}).min(3, {message: 'Campo obrigatório'}),
     cpf: z.string({ required_error: "Campo obrigatório" }).refine(isValidCPF, { message: 'CPF inválido' }),
     birthday: z
-    .string()
+    .string({required_error: "Campo obrigatório", message: 'Campo obrigatório'})
     .regex(
       /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/,
       'Formato inválido. Use DD/MM/AAAA'
-    )
-    .nonempty({ message: 'Campo obrigatório' }),
-    phone: z.string().regex(
+    ),
+    phone: z.string({required_error: "Campo obrigatório", message: 'Campo obrigatório'}).regex(
       /^\(\d{2}\) \d{5}-\d{4}$/,
       'Formato inválido. Use (00) 00000-0000'
-    ).nonempty({ message: 'Campo obrigatório' })
+    )
   });
 
   const {
@@ -75,7 +74,7 @@ export default function FormStep2PF({ handleSave }: FormStepProps) {
           type="text"
           {...register('cpf')}
           placeholder="Ex: 123.456.789-10"
-          className="w-full border-2 rounded p-2 mb-4"
+          className="w-full border-2 rounded p-2"
         />
         <span className="text-xs tracking-wide text-red-600">{errors.cpf ? errors.cpf?.message : ''}</span>
       </div>
