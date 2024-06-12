@@ -1,4 +1,4 @@
-# MB Projext
+# MB Project
 
 ### Follow step by step to execute the project
 
