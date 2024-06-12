@@ -1,5 +1,6 @@
 import './index.css'
 import logo from './assets/logo.svg';
+import woman from './assets/woman.svg';
 import { useEffect, useState } from "react";
 import Stepper from "./components/stepper/Stepper";
 import FormStep1 from "./components/form/FormStep1";
@@ -157,6 +158,18 @@ export default function App() {
           </div>
         </div>
         <div className="flex flex-1 justify-center items-center">
+          <img
+              className='max-[1025px]:hidden'
+              src={woman}
+              alt="woman"
+              style={{
+                position: 'absolute',
+                left: '24.75rem',
+                height: '708px',
+                width: '450px',
+                bottom: 0
+              }}
+          />
           <div className={`md:w-1/2 xs:w-full mx-auto bg-white shadow-lg rounded-lg p-8 ${currentStep === 4 ? "h-[650px]" : "h-[600px]"} `}>
             <div className="ml-6 mr-6 flex flex-row justify-center items-center">
               <Stepper onBackClick={handleClickStepBack} steps={steps} currentStep={currentStep} />

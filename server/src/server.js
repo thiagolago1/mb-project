@@ -67,5 +67,5 @@ app.post('/registration', [
   res.status(200).json({ message: "Registration successful", statusCode: 200 });
 });
 
-app.listen(3333, () => console.log('Server is running!'));
+app.listen(3333, () => console.log('Server is running! http://localhost:3333'));
 
